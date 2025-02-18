@@ -1,9 +1,11 @@
 {
-  "builds": [
-    { "src": "app.py", "use": "@vercel/python" }
-  ],
+  "functions": {
+    "api/app.py": {
+      "runtime": "python@3.9.12"
+    }
+  },
   "routes": [
-    { "src": "/video", "dest": "/app.py" },
+    { "src": "/video", "dest": "/api/app.py" },
     { "src": "/(.*)", "dest": "/templates/index.html" }
   ]
 }
