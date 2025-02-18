@@ -5,7 +5,7 @@
     }
   },
   "routes": [
-    { "src": "/video", "dest": "/api/app.py" },
-    { "src": "/(.*)", "dest": "/index.html" }
+    { "src": "/video", "dest": "/app.py" },
+    { "src": "/(.*)", "dest": "/templates/index.html" }
   ]
 }
