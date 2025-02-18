@@ -37,3 +37,11 @@ if __name__=="__main__":
     # Set the port dynamically (can be used for Heroku or local)
     PORT = int(os.environ.get("PORT", 10000))
     app.run(host='0.0.0.0', port=PORT, debug=True)
+
+
+
+#   "functions": {
+#     "app.py": {
+#       "runtime": "python@3.9.12"
+#     }
+#   },
