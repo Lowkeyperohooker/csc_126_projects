@@ -1,7 +1,8 @@
-{ "version": 2,
-    "builds": [
-      { "src": "api/app.py", "use": "@vercel/python" }
-    ],
+{ 
+  "version": 2,
+  "builds": [
+    { "src": "api/app.py", "use": "@vercel/python" }
+  ],
   "functions": {
     "api/app.py": {
       "runtime": "python@3.9.13"
