@@ -1,33 +1,35 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Live Stream Viewer</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}" />
+  <title>Face and Eye Detection</title>
 </head>
 <body>
-    <header>
-        <div class="container">
-            <h1>Live Stream</h1>
-        </div>
-    </header>
-    
-    <div class="container">
-        <div class="stream-container">
-            <div class="video-frame">
-                <img src="{{ url_for('video_feed') }}" alt="Live video stream" />
-            </div>
-            <div class="stream-info">
-                <p>Welcome to the live stream. The content is being updated in real-time.</p>
-            </div>
-        </div>
+  <div class="container">
+    <h1>Face and Eye Detection</h1>
+    <div class="controls">
+      <button onclick="startDetection(true, true)">Face & Eye</button>
+      <button onclick="startDetection(true, false)">Face</button>
+      <button onclick="startDetection(false, true)">Eye</button>
+      <button onclick="stopDetection()">Stop</button>
     </div>
-    
-    <footer>
-        <div class="container">
-            <p>&copy; 2025 Live Stream Viewer</p>
-        </div>
-    </footer>
+    <div class="video-frame">
+      <img id="videoFeed" src="" alt="Video Stream" />
+    </div>
+  </div>
+
+  <script>
+    function startDetection(faces, eyes) {
+      const url = `/video_feed?faces=${faces}&eyes=${eyes}`;
+      document.getElementById('videoFeed').src = url;
+    }
+
+    function stopDetection() {
+      document.getElementById('videoFeed').src = '';
+    }
+  </script>
 </body>
 </html>
+
