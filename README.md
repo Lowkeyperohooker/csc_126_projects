@@ -1,10 +1,13 @@
-# csc_126-project1
+# CSC 126 - Project 1
 
-By:
-Kian Estrera 
-Stefen Estrada
+## By:
+- **Kian Estrera**
+- **Stefen Estrada**
 
 
-To use:
-terminal
-pip install -r requirements.txt
+## Installation
+Install the necessary dependencies:
+    ```bash
+    pip install -r requirements.txt
+    ```
+
