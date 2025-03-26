@@ -3,3 +3,8 @@
 By:
 Kian Estrera 
 Stefen Estrada
+
+
+To use:
+terminal
+pip install -r requirements.txt
