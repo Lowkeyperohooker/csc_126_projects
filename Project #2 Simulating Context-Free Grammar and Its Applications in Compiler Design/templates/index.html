@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Expression Parser</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        form {
+            margin-bottom: 20px;
+        }
+        input[type="text"] {
+            width: 300px;
+            padding: 8px;
+            font-size: 16px;
+        }
+        button {
+            padding: 8px 16px;
+            font-size: 16px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        .output {
+            margin: 20px 0;
+            padding: 10px;
+            border: 1px solid #ddd;
+            min-height: 20px;
+        }
+        .tree-image {
+            max-width: 100%;
+            margin-top: 20px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        .examples {
+            margin-top: 20px;
+            font-size: 14px;
+            color: #666;
+        }
+    </style>
+</head>
+<body>
+    <h1>Expression Parser</h1>
+    <p>Enter an expression with variables and operators (+, *)</p>
+    
+    <form method="POST">
+        <input type="text" name="expr" value="{{ expr }}" 
+               placeholder="e.g., a+b*c or x1*(y2+z3)" required>
+        <button type="submit">Parse</button>
+    </form>
+    
+    {% if output %}
+        <div class="output">{{ output }}</div>
+    {% endif %}
+    
+    {% if tree_img %}
+        <img class="tree-image" src="data:image/png;base64,{{ tree_img }}" alt="Parse Tree">
+    {% endif %}
+    
+    <div class="examples">
+        <p>Try these examples:</p>
+       
